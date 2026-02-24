@@ -1,142 +1,269 @@
-# Networking, Linux & Security — Practical Lab
+# 🛡️ Month 1 – Networking, Linux & Security Foundations
 
-📘 Dokumentasi praktis lab untuk memahami *networking fundamental*, administrasi Linux, dan pemahaman awal *security/ethical hacking* secara bertahap.
+Repository ini berisi dokumentasi perjalanan belajar selama 1 bulan membangun pondasi kuat di bidang:
 
-Repositori ini dirancang sebagai panduan lengkap dari dasar hingga teknik eksploitasi awal.
+- 🌐 Networking Fundamental
+- 🐧 Linux Administration
+- 🔐 Basic Security & OWASP Awareness
+- 🧪 Hands-on Lab & Mini Pentest Simulation
 
----
-
-## 🧠 Overview
-
-Lab mencakup:
-
-✔️ Networking fundamental (OSI, TCP/IP, subnetting, DNS, HTTP)  
-✔️ Administrasi Linux & Bash  
-✔️ Hardening SSH  
-✔️ Security basics — hashing, encryption, firewall  
-✔️ Reconnaissance & OWASP Top 10 pemahaman awal  
-✔️ Nmap & Netcat untuk eksplorasi dan test
+Target utama dari project ini adalah membangun fundamental skill yang siap naik ke level pentesting & cybersecurity lebih lanjut.
 
 ---
 
-## 📂 Table of Contents
+# 🎯 OUTPUT AKHIR BULAN 1
 
-1. [Week 1 — Networking Fundamental](#week-1--networking-fundamental)  
-2. [Week 2 — Linux & Bash Lab](#week-2--linux--bash-lab)  
-3. [Week 3 — Linux Security, OWASP & Exploitation Basics](#week-3--linux-security-owasp--exploitation-basics)  
-4. [Lab Environment](#lab-environment)  
-5. [Tools Used](#tools-used)  
-6. [Next Roadmap](#next-roadmap)  
-7. [Author](#author)
+Setelah menyelesaikan seluruh materi dan lab di repository ini, saya mampu:
 
----
-
-## 🌐 Week 1 — Networking Fundamental
-
-**Dokumentasi:** `Week1-Networking-Fundamental.txt`
-
-### 🧩 Fokus Materi
-
-- OSI & TCP/IP Model  
-- IPv4 Addressing & Subnetting  
-- DNS workflow & HTTP vs HTTPS  
-- Nmap scanning dasar (port, service, versi)  
-- Pengenalan troubleshooting dasar jaringan :contentReference[oaicite:1]{index=1}
-
-### 🎯 Hasil Pembelajaran
-
-- Memahami cara data berpindah dalam layer jaringan
-- Hitung subnet & host usable
-- Kenali port & service umum
-- Lakukan basic scanning dengan Nmap
+- ✅ Melakukan subnetting manual tanpa kalkulator
+- ✅ Melakukan scanning Nmap dan memahami hasilnya
+- ✅ Menghubungkan SSH antar VM (termasuk key authentication)
+- ✅ Memahami dan menjelaskan OWASP Top 10
+- ✅ Menyelesaikan OverTheWire Bandit (0–10+)
+- ✅ Membuat 1 Mini Pentest Report dalam bentuk PDF
 
 ---
 
-## 🐧 Week 2 — Linux & Bash Lab
+# 📅 STRUCTURE PEMBELAJARAN
 
-**Dokumentasi:** `Week2-Linux-Bash-Lab.txt`
+## 📘 Week 1 – Networking Fundamental
 
-### 🧩 Fokus Materi
+Fokus membangun pondasi jaringan.
 
-- Struktur file system Linux & direktori penting
-- Permission & ownership (chmod, chown)
-- Process management (`ps`, `top`, `kill`)
-- Networking command (`ss`, `netstat`, `curl`, `telnet`)
-- Bash scripting dasar
-- SSH server setup & hardening (key authentication) :contentReference[oaicite:2]{index=2}
+Materi yang dipelajari:
 
-### 🎯 Hasil Pembelajaran
+- OSI Model vs TCP/IP Model
+- IPv4 Addressing
+- Subnetting manual
+- CIDR notation
+- DNS workflow
+- HTTP vs HTTPS
+- TCP vs UDP
+- 3-Way Handshake
+- Port & Service concept
+- Basic Nmap scanning
 
-- Navigasi filesystem Linux
-- Kelola permission & proses
-- Automasi dasar dengan Bash
-- Konfigurasi SSH yang lebih aman
+Contoh praktik:
 
----
+```bash
+nmap -sS 192.168.1.10
+nmap -sC -sV 192.168.1.10
+```
 
-## 🔐 Week 3 — Linux Security, OWASP & Exploitation Basics
-
-**Dokumentasi:** `Week 3 – Linux Security, OWASP & Network Exploitation Basics.txt`
-
-### 🧩 Fokus Materi
-
-1. **CIA Triad & Sniffing HTTP**  
-   - Bandingkan plaintext HTTP vs terenkripsi HTTPS  
-2. **Hashing & Encryption**  
-   - Perbedaan dan praktik hashing/enkripsi  
-3. **UFW Firewall (Rules & Logging)**  
-   - Konfigurasi block/allow, log aktif  
-4. **OWASP Top 10 (Simulasi Metasploitable)**  
-   - Identifikasi kategori kerentanan umum  
-5. **Advanced Nmap Scan**  
-   - Port/service/version/OS detection  
-6. **Netcat Practice & Reverse Shell**  
-   - Listener, connect, upgrade shell :contentReference[oaicite:3]{index=3}
-
-### 🎯 Hasil Pembelajaran
-
-- Pahami celah *confidentiality* HTTP
-- Maknai hashing vs encryption
-- Implementasi firewall dasar
-- Simulasi rekonstruksi OWASP Top 10
-- Penggunaan Nmap lanjutan
-- Praktik Netcat connect & reverse shell
+Memahami:
+- Open / Closed / Filtered port
+- Service detection
+- Version detection
 
 ---
 
-## 🧪 Lab Environment
+## 🐧 Week 2 – Linux & Bash Practice
 
-Lab dijalankan dengan jaringan internal VirtualBox:
+Fokus pada penggunaan Linux sebagai environment utama cybersecurity.
 
-- **Kali Linux** — Attacker  
-- **Ubuntu Server** — Target  
-- **Metasploitable** — Target rentan (Week 3)  
-- Network: `192.168.100.0/24` :contentReference[oaicite:4]{index=4}
+Materi:
 
----
+- Struktur filesystem Linux
+- File permission (chmod, chown)
+- Process management (ps, top, kill)
+- User management
+- Networking commands:
+  - ss
+  - netstat
+  - curl
+  - telnet
+- Basic Bash scripting
+- Setup SSH server
+- SSH key-based authentication
 
-## 🛠️ Tools Used
+Contoh SSH:
 
-### 🔹 Networking / Recon
-
-- `nmap`, `ss`, `netstat`, `tcpdump`  
-- `curl`, `telnet`, DNS tools
-
-### 🔹 Linux Administration
-
-- `chmod`, `chown`, `ps`, `top`, `kill`  
-- Bash scripting
-
-### 🔹 Security / Exploitation
-
-- UFW (firewall)
-- Netcat (`nc`)
-- OWASP awareness
+```bash
+ssh user@192.168.1.20
+ssh -i id_rsa user@192.168.1.20
+```
 
 ---
 
-## 👤 Author
+## 🔐 Week 3 – Security & OWASP Awareness
 
-**Dryex** — Dokumentasi lab praktis membangun pondasi kuat cybersecurity.
+Mulai masuk ke konsep keamanan.
+
+Materi:
+
+- CIA Triad (Confidentiality, Integrity, Availability)
+- Hashing vs Encryption
+- Firewall dasar (UFW)
+- Packet sniffing HTTP
+- OWASP Top 10 overview
+- Nmap advanced scan
+- Netcat basic usage
+
+Contoh:
+
+```bash
+nmap -sC -sV -O -p- 192.168.1.30
+nc -lvnp 4444
+```
+
+Memahami:
+- Service fingerprinting
+- Banner grabbing
+- Risk exposure dari open port
 
 ---
+
+## 🧪 Week 4 – Mini Pentest Simulation & Report
+
+Simulasi penetration testing sederhana pada lab environment.
+
+Target yang digunakan:
+
+- TryHackMe Lab (VPN)
+- OverTheWire Bandit
+- Metasploitable 2
+
+Tahapan yang dilakukan:
+
+### 1️⃣ Reconnaissance
+
+```bash
+nmap -sC -sV -p- 192.168.100.30
+```
+
+Contoh temuan:
+- 21 (FTP)
+- 22 (SSH)
+- 23 (Telnet)
+- 80 (HTTP)
+- 139/445 (SMB)
+- 3306 (MySQL)
+
+---
+
+### 2️⃣ Exploitation
+
+- Login Telnet menggunakan default credential
+- Akses sebagai root
+- Enumerasi user & service
+
+---
+
+### 3️⃣ Post-Exploitation
+
+- Cek SUID binary
+- Enumerasi konfigurasi sistem
+- Identifikasi service yang tidak perlu aktif
+
+---
+
+### 4️⃣ Security Findings
+
+Contoh temuan:
+
+- Telnet aktif tanpa enkripsi
+- Default credential masih digunakan
+- Banyak port terbuka tanpa pembatasan firewall
+
+---
+
+### 5️⃣ Recommendations
+
+- Disable Telnet
+- Gunakan SSH key-based authentication
+- Implementasi firewall (UFW)
+- Tutup port yang tidak diperlukan
+- Update & patch sistem
+
+---
+
+## 📄 Mini Pentest Report
+
+Week 4 menghasilkan 1 laporan mini pentest berbentuk PDF berisi:
+
+- Scope
+- Methodology
+- Findings
+- Risk Analysis
+- Recommendation
+- Conclusion
+
+File laporan tersedia di repository.
+
+---
+
+# 🧰 Tools yang Digunakan
+
+## Networking & Recon
+- nmap
+- netstat
+- ss
+- tcpdump
+
+## Linux Administration
+- chmod
+- chown
+- ps
+- top
+- kill
+
+## Security Tools
+- netcat
+- telnet
+- UFW
+- SSH
+
+## Lab Environment
+- Kali Linux
+- Metasploitable 2
+- VirtualBox
+- TryHackMe VPN
+
+---
+
+# 🚀 Cara Menggunakan Repository Ini
+
+Clone repository:
+
+```bash
+git clone https://github.com/Dryex-yo/Month1-Networking-Linux-Security.git
+cd Month1-Networking-Linux-Security
+```
+
+Baca file per minggu dan praktikkan langsung di lab VM.
+
+Disarankan:
+- Gunakan minimal 2 VM
+- Dokumentasikan setiap percobaan
+- Jangan hanya baca — praktikkan
+
+---
+
+# 🎓 Goal Selanjutnya (Month 2)
+
+- Web exploitation deeper
+- Privilege escalation
+- Active Directory basic
+- CTF challenge lebih kompleks
+
+---
+
+# 📌 Tentang Project Ini
+
+Project ini dibuat sebagai dokumentasi perjalanan belajar cybersecurity dari nol dengan pendekatan:
+
+Theory + Lab + Documentation + Reporting
+
+Tujuan akhirnya bukan hanya bisa "scan", tapi bisa:
+
+- Memahami apa yang terjadi
+- Menjelaskan hasil scan
+- Menganalisis risiko
+- Memberikan rekomendasi keamanan
+
+---
+
+# 👨‍💻 Author
+
+Dryex  
+Cybersecurity learner – documenting the journey from zero to professional.
